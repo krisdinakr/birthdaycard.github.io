@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="https://freepngimg.com/download/cat/35907-1-black-cat-photo.png">
+    
+    <link rel="stylesheet" href="all.css" />
+    <meta property="og:image" content="https://image.freepik.com/free-vector/draw-banner-background-portrait-cute-cats-happy-birthday_45130-316.jpg">
+    <meta property="og:description" content="Go check out my card!">
+    <meta property="og:title" content="Happy Birthday!">
+
+    <style>
+        * {
+            font-family: 'Yusei Magic', sans-serif;
+        }
+
+        body {
+            background-color: #f05454;
+        }
+
+        .envelope {
+            width: 200px;
+            height: 200px;
+            background-image: url(https://pngimg.com/uploads/envelope/envelope_PNG18366.png);
+            background-size: cover;
+            background-position: center;
+            margin: 200px auto 0 auto;
+            cursor: pointer;
+        }
+
+        .envelope-msg {
+            color: white;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .letter-closed {
+            display: block;
+        }
+
+        .letter-open {
+            display: none;
+        }
+
+        .kitty {
+            width: 200px;
+            height: 200px;
+            background-image: url('https://c.tenor.com/QDgG_4SaWtUAAAAi/birthday-birthday-cakes.gif');
+            background-size: cover;
+            background-position: center;
+            background-color: white;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin: 75px auto 20px auto;
+            box-shadow: 0 0 10px 0 white;
+        }
+
+        .letter-title {
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .message-box {
+            background-color: ivory;
+            width: 400px;
+            margin: 8px auto 0 auto;
+            padding: 22px;
+            color: brown;
+            box-shadow: 0 0 10px 0 ivory;
+        }
+
+        @media screen and (max-width: 760px) {
+            .message-box {
+                width: 300px;
+                padding: 14px;
+            }
+
+            .kitty {
+                width: 150px;
+                height: 150px;
+                margin: 70px auto 0px auto;
+            }
+
+            .letter-title {
+                font-size: 22px;
+            }
+
+            .envelope {
+                width: 150px;
+                height: 150px;
+                margin: 150px auto 0px auto;
+            }
+
+            .envelope-msg {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+    <script>
+        function open_letter() {
+            const user = prompt("What's Your Name?", "Amanda");
+            if (user != null) {
+                document.getElementById("userName").innerHTML = "Dear " + user + ",";
+            }
+            document.getElementsByClassName("letter-closed")[0].style.display = 'none';
+            document.getElementsByClassName("letter-open")[0].style.display = 'block';
+        }
+
+        function on_click_kitty() {
+            alert('Yay! You found me!');
+            location.href = 'https://youtu.be/RaeLAwacDG4';
+        }
+
+    </script>
+    <script src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/global/confetti.js"></script>
+</head>
+
+<body>
+    <div class="letter-closed" onclick="open_letter()">
+        <div class="envelope"></div>
+        <h2 class="envelope-msg">Open the Letter!</h2>
+    </div>
+
+    <div class="letter-open">
+        <div class="kitty" onclick="on_click_kitty()"></div>
+        <h2 class="letter-title">Happy Birthday <i class="fas fa-heart"></i></h2>
+        <div class="message-box" >
+            <div id="userName"></div>
+            Hope your birthday's filled with lots of good things for you! :)<br>
+            It certainly is wonderful to have a friend like you.<br>
+            May all your dreams come true this year!<br>
+            <br>
+            Love <i class="fas fa-paw"></i>,<br>
+            Kitty <i class="fas fa-cat"></i>
+        </div>
+    </div>
+</body>
+
+</html>
